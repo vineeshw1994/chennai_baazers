@@ -1,0 +1,105 @@
+/* Hide the default scrollbar */
+.scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Customize scrollbar track */
+.scroll::-webkit-scrollbar-track {
+  background: rgb(
+    193,
+    197,
+    200
+  ); /* Set the background color of the scrollbar track */
+}
+
+/* Customize scrollbar thumb */
+.scroll::-webkit-scrollbar-thumb {
+  background: rgb(61, 92, 122);
+  border-radius: 5px;
+}
+/* Set the style and radius of the scrollbar thumb at the top */
+.scroll::-webkit-scrollbar-thumb:start {
+    border-top-left-radius: 5px; /* Set the radius for the top-left corner */
+    border-top-right-radius: 5px; /* Set the radius for the top-right corner */
+  }
+  
+  /* Set the style and radius of the scrollbar thumb at the bottom */
+  .scroll::-webkit-scrollbar-thumb:end {
+    border-bottom-left-radius: 5px; /* Set the radius for the bottom-left corner */
+    border-bottom-right-radius: 5px; /* Set the radius for the bottom-right corner */
+  }
+
+/* Set scrollbar thumb height and width */
+.scroll::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Set the color of the scrollbar thumb on hover */
+}
+
+
+.product_scroll{
+    max-height: 250px;
+    overflow-y: auto;
+}
+/* Customize scrollbar track */
+.product_scroll::-webkit-scrollbar-track {
+    background: rgb(
+      193,
+      197,
+      200
+    ); /* Set the background color of the scrollbar track */
+  }
+  
+  /* Customize scrollbar thumb */
+  .product_scroll::-webkit-scrollbar-thumb {
+    background: rgb(61, 92, 122);
+    border-radius: 5px;
+  }
+  /* Set the style and radius of the scrollbar thumb at the top */
+  .product_scroll::-webkit-scrollbar-thumb:start {
+      border-top-left-radius: 5px; /* Set the radius for the top-left corner */
+      border-top-right-radius: 5px; /* Set the radius for the top-right corner */
+    }
+    
+    /* Set the style and radius of the scrollbar thumb at the bottom */
+    .product_scroll::-webkit-scrollbar-thumb:end {
+      border-bottom-left-radius: 5px; /* Set the radius for the bottom-left corner */
+      border-bottom-right-radius: 5px; /* Set the radius for the bottom-right corner */
+    }
+  
+  /* Set scrollbar thumb height and width */
+  .product_scroll::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Set the color of the scrollbar thumb on hover */
+  }
+
+  /* Default styles */
+.Accordion {
+  width: 300px; /* Default width for all devices */
+}
+
+/* Media query for small devices */
+@media (max-width: 640px) {
+  .Accordion {
+    width: 280px; /* Adjust width for small devices */
+  }
+}
+
+/* Media query for medium devices */
+@media (min-width: 641px) and (max-width: 768px) {
+  .Accordion {
+    width: 350px; /* Adjust width for medium devices */
+    
+  }
+}
+
+/* Media query for large devices */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .Accordion {
+    width: 600px; /* Adjust width for large devices */
+  }
+}
+
+/* Media query for extra-large devices */
+@media (min-width: 1024px) {
+  .Accordion {
+    width: 800px; /* Adjust width for extra-large devices */
+  }
+}

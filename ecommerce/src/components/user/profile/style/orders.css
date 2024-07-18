@@ -1,0 +1,40 @@
+.orders {
+  max-height: 750px;
+  overflow-y: auto;
+}
+
+/* Hide the default ordersbar */
+.orders::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Customize ordersbar track */
+  .orders::-webkit-scrollbar-track {
+    background: rgb(
+      193,
+      197,
+      200
+    ); /* Set the background color of the ordersbar track */
+  }
+  
+  /* Customize ordersbar thumb */
+  .orders::-webkit-scrollbar-thumb {
+    background: rgb(61, 92, 122);
+    border-radius: 5px;
+  }
+  /* Set the style and radius of the ordersbar thumb at the top */
+  .orders::-webkit-scrollbar-thumb:start {
+      border-top-left-radius: 5px; /* Set the radius for the top-left corner */
+      border-top-right-radius: 5px; /* Set the radius for the top-right corner */
+    }
+    
+    /* Set the style and radius of the ordersbar thumb at the bottom */
+    .orders::-webkit-scrollbar-thumb:end {
+      border-bottom-left-radius: 5px; /* Set the radius for the bottom-left corner */
+      border-bottom-right-radius: 5px; /* Set the radius for the bottom-right corner */
+    }
+  
+  /* Set ordersbar thumb height and width */
+  .orders::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Set the color of the ordersbar thumb on hover */
+  }

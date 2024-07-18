@@ -1,0 +1,62 @@
+.main_section {
+    width: 100%;
+    overflow-x: hidden;
+    height: 100vh;
+  }
+  
+  /* Hide the default scrollbar */
+  .main_section::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Customize scrollbar track */
+  .main_section::-webkit-scrollbar-track {
+    background: rgb(
+      193,
+      197,
+      200
+    ); /* Set the background color of the scrollbar track */
+  }
+  
+  /* Customize scrollbar thumb */
+  .main_section::-webkit-scrollbar-thumb {
+    background: rgb(61, 92, 122);
+    border-radius: 5px;
+  }
+  /* Set the style and radius of the scrollbar thumb at the top */
+  .main_section::-webkit-scrollbar-thumb:start {
+    border-top-left-radius: 5px; /* Set the radius for the top-left corner */
+    border-top-right-radius: 5px; /* Set the radius for the top-right corner */
+  }
+  
+  /* Set the style and radius of the scrollbar thumb at the bottom */
+  .main_section::-webkit-scrollbar-thumb:end {
+    border-bottom-left-radius: 5px; /* Set the radius for the bottom-left corner */
+    border-bottom-right-radius: 5px; /* Set the radius for the bottom-right corner */
+  }
+  
+  /* Set scrollbar thumb height and width */
+  .main_section::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Set the color of the scrollbar thumb on hover */
+  }
+
+
+
+  /* Styling for the select dropdown */
+.select-dropdown {
+  background-color: #f0f4f7; /* Light gray background color */
+  transition: background-color 0.3s ease; /* Smooth transition animation */
+  cursor: pointer; /* Show pointer cursor on hover */
+  outline: none; /* Remove default focus outline */
+  padding-left: 8px; /* Add padding for better readability */
+}
+
+/* Styling for dropdown options */
+.select-dropdown option {
+  background-color: #ffffff; /* White background color for options */
+}
+
+/* Hover effect for options */
+.select-dropdown option:hover {
+  background-color: #edf2f7; /* Lighter gray on hover */
+}

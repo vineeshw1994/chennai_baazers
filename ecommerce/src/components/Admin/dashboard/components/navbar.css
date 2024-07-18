@@ -1,0 +1,11 @@
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 48px;
+    gap: 2px;
+    height: 0; /* Initially hidden */
+    overflow: hidden; /* Hide overflowing content */
+    transition: height 0.3s ease; /* Add transition effect */
+  }
+  
