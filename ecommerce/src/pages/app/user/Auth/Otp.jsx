@@ -17,6 +17,28 @@ const Otp = () => {
     input3: "",
     input4: "",
   });
+  const [timer, setTimer] = useState(() => {
+    const storedTimer = localStorage.getItem("otpTimer");
+    return storedTimer ? parseInt(storedTimer, 10) : 60;
+  });
+  const [canResend, setCanResend] = useState(false);
+
+  useEffect(() => {
+    if (timer > 0) {
+      const countdown = setInterval(() => {
+        setTimer((prevTimer) => {
+          const newTimer = prevTimer - 1;
+          localStorage.setItem("otpTimer", newTimer);
+          return newTimer;
+        });
+      }, 1000);
+
+      return () => clearInterval(countdown);
+    } else {
+      localStorage.removeItem("otpTimer");
+      setCanResend(true);
+    }
+  }, [timer]);
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -70,6 +92,14 @@ const Otp = () => {
     } catch (error) {
       toast.error(error.message);
     }
+  };
+
+  const handleResendOTP = () => {
+    // Handle OTP resend logic here
+    toast.success("Resend otp successfully");
+    setTimer(60); // Reset timer
+    localStorage.setItem('otpTimer', 60);
+    setCanResend(false); // Disable resend button
   };
 
   return (
@@ -129,9 +159,16 @@ const Otp = () => {
             >
               Submit
             </button>
-            <div className="text-center">
-              <p className="text-sm mt-2">Didn't receive the code?</p>
-              <p className="text-sm underline">Resend</p>
+            <div className="text-center mt-4">
+              <p className="text-sm">Resend OTP in {timer} seconds</p>
+              {canResend && (
+                <button
+                  onClick={handleResendOTP}
+                  className="text-sm underline  bg-cyan-600 text-white px-2 rounded-lg py-1 font-lato "
+                >
+                  Resend OTP
+                </button>
+              )}
             </div>
           </section>
         </div>
