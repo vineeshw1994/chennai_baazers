@@ -12,6 +12,7 @@ import { errorHandler } from "../utils/error.js";
 import jwt from "jsonwebtoken";
 import { otpChecking, otpSaving } from "../models/otpModel.js";
 import unirest from "unirest";
+import sendEmail from '../service/sendEmail.js'
 
 // export const login = async (req, res, next) => {
 //   try {
@@ -51,16 +52,16 @@ import unirest from "unirest";
 export const signUp = async (req, res, next) => {
   console.log("this is signup function");
   try {
-    const { mobile } = req.body;
+    const { email } = req.body;
     console.log(req.body);
-    console.log(typeof mobile);
+    console.log(typeof email);
 
     // Input validation
-    if (!mobile || mobile === "" || mobile.length < 10) {
-      return next(errorHandler(400, "Enter the Correct Number"));
+    if (!email || email === "" ) {
+      return next(errorHandler(400, "Enter the Valid Email Id"));
     }
     // Token creation
-    const token = jwt.sign({ mobile }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ email }, process.env.JWT_SECRET, {
       expiresIn: "1h",
     });
 
@@ -73,6 +74,8 @@ export const signUp = async (req, res, next) => {
 
     // Sending OTP
     try {
+
+       await sendEmail()
       const req = unirest("POST", "https://www.fast2sms.com/dev/bulkV2");
 
       req.headers({

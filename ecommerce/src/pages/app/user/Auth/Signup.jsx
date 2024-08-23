@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import {  Spinner, FloatingLabel } from "flowbite-react";
+import { Spinner, FloatingLabel } from "flowbite-react";
 import toast from "react-hot-toast";
 import { IoMdClose } from "react-icons/io";
 
@@ -14,13 +14,13 @@ const Signup = () => {
   };
   console.log(formData);
   const handleSubmit = async () => {
-    if (!formData.mobile || formData.mobile === "") {
-      return toast.error("Mobile Number is Required");
+    if (!formData.email || formData.email === "") {
+      return toast.error("Email is Required");
     }
 
-    if (formData.mobile.length < 10) {
-      return toast.error("Enter correct number");
-    }
+    // if (formData.mobile.length < 10) {
+    //   return toast.error("Enter correct number");
+    // }
     try {
       setLoading(true);
       const res = await fetch("/api/user/sign-up", {
@@ -60,9 +60,9 @@ const Signup = () => {
         </p> */}
 
         <FloatingLabel
-          type="number"
-          id="mobile"
-          placeholder="91- Enter Your Mobile Number"
+          type="email"
+          id="email"
+          placeholder=" Enter Your Email Id"
           onChange={handleChange}
           variant="standard"
           label=""
